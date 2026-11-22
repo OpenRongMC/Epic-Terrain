@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:cache",
+  "input": {
+    "type": "minecraft:cache",
+    "input": {
+      "type": "minecraft:mul",
+      "left": "etn:overworld/erosion/e12",
+      "right": -1
+    }
+  }
+}

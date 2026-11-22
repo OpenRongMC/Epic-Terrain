@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:mul",
+  "left": {
+    "type": "minecraft:add",
+    "left": {
+      "type": "minecraft:mul",
+      "left": {
+        "type": "minecraft:abs",
+        "input": "etn:overworld/erosion/b/1"
+      },
+      "right": -0.5
+    },
+    "right": "etn:overworld/erosion/a/a"
+  },
+  "right": 1
+}

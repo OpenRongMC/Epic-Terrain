@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:cache",
+  "input": {
+    "type": "minecraft:mul",
+    "left": {
+      "type": "minecraft:abs",
+      "input": {
+        "type": "minecraft:noise",
+        "noise": "etn:r/1",
+        "xz_scale": 1,
+        "y_scale": 0
+      }
+    },
+    "right": 1
+  }
+}

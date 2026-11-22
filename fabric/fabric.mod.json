@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "rongmc_epic_terrain",
+  "version": "26.3-port.1",
+  "name": "Epic Terrain",
+  "description": "Epic Terrain for 26.3 with stepped rivers and biome compatibility",
+  "authors": [
+    "wonderfulAi_Chen",
+    "RongMC port"
+  ],
+  "contact": {
+    "homepage": "https://github.com/wonderfulaichen/Epic-Terrain",
+    "sources": "https://github.com/wonderfulaichen/Epic-Terrain"
+  },
+  "license": "GPL-3.0",
+  "environment": "*",
+  "depends": {
+    "fabricloader": ">=0.20.1",
+    "minecraft": "26.3",
+    "fabric-resource-loader-v1": "*"
+  },
+  "provides": [
+    "epic_terrain"
+  ]
+}

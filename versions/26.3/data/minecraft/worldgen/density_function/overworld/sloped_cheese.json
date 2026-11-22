@@ -1,0 +1,5 @@
+{
+  "type": "minecraft:add",
+  "left": "etn:overworld/depth",
+  "right": 0
+}

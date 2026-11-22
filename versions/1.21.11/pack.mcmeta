@@ -1,0 +1,13 @@
+{
+  "pack": {
+    "description": "Epic-Terrain 1.21.11 (stepped river/waterfall + biome-compat fixes)",
+    "min_format": [
+      94,
+      1
+    ],
+    "max_format": [
+      94,
+      1
+    ]
+  }
+}

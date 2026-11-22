@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:add",
+  "left": {
+    "type": "minecraft:mul",
+    "left": "etn:overworld/caves/a/a",
+    "right": -0.1
+  },
+  "right": 0.1
+}

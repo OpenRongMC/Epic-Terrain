@@ -1,0 +1,5 @@
+{
+  "type": "minecraft:mul",
+  "left": "etn:excessive_biomes/temperature1",
+  "right": 1
+}

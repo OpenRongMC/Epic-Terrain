@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:add",
+  "left": {
+    "type": "minecraft:gradient",
+    "axis": "y",
+    "from_coordinate": -64,
+    "to_coordinate": 512,
+    "from_value": 1.5,
+    "to_value": -1.5
+  },
+  "right": "etn:overworld/continents/c2"
+}
