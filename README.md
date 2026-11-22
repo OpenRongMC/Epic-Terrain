@@ -1,35 +1,37 @@
-# 史诗地形
+# Epic Terrain · 史诗地形
 
 简体中文 · [English](./README.en.md)
 
-世界生成移植版，保留阶梯河、瀑布与河系生成特征。兼容性调整让地形与其他群系模组更容易共存，但不同世界生成组合仍需试跑。
 
-## 下载与安装
+基于 [wonderfulaichen/Epic-Terrain](https://github.com/wonderfulaichen/Epic-Terrain) 的 `versions/1.20.5-1.21.4`（v0.1.4）移植到 **Minecraft 26.3**。
 
-- 版本 · [v26.3-port.1](https://github.com/OpenRongMC/Epic-Terrain/releases/tag/v26.3-port.1) (已发布)
-- 下载文件 · `rongmc-epic-terrain-26.3-port.1.jar`
-- 运行环境 · Minecraft Java 26.3, Fabric, Java 25
-- Fabric Loader · `>=0.20.1`
-- Fabric 模组 ID · `rongmc_epic_terrain`
-- JAR 声明的依赖 · [Fabric API](https://modrinth.com/mod/fabric-api) (`fabric-resource-loader-v1`)
+## 本套包含什么
 
-把发行 JAR 放入对应实例的 `mods/` 目录。发布的是 Fabric JAR。源码树另含各版本的数据包目录。同一世界只启用一份相同地形规则。多人由服务端生成，确认客户端包是否要求携带相同模组。
+- **保留**：原版阶梯河（Stepped river）、瀑布/落差（waterfall）相关地形与河系。
+- **兼容修复**（来自 Compatible 思路，不是官方无瀑布那套河系）：
+  - **不覆盖** `minecraft:dimension/overworld`（不写死 multi_noise 群系表，便于 Terrablender / 加群系模组）。
+  - 气候槽 `temperature` / `vegetation` 改为原版式 `shifted_noise`，减少对群系分布噪声的劫持。
 
-## 如何验证
+## RongMC 26.3 版本的改动
 
-用同一个种子创建两个测试世界，检查有无地形包时的河岸和落差。已有区块不会重新生成，旧图边界可能出现接缝。
+26.3 数据包使用新的包格式和世界生成结构。保留阶梯河与瀑布，同时沿用移植版不覆盖原版主世界维度定义的做法。
 
-## 开发
+## 安装
 
-构建入口见 [`port-26.3.py`](./port-26.3.py)。运行前检查脚本需要的工作区目录与依赖。
+在 [GitHub Releases](https://github.com/OpenRongMC/Epic-Terrain/releases/tag/v26.3-port.1) 下载 **v26.3-port.1**。使用 Minecraft Java **26.3**、**Fabric** 和 **Java 25**。 依赖 [Fabric API](https://modrinth.com/mod/fabric-api)。 发布的是 Fabric JAR。源码树另含各版本的数据包目录；同一世界只启用一份相同地形规则。多人由服务端生成，确认客户端包是否要求携带相同模组。
 
-## 文档与反馈
+发布版 Fabric JAR 放入 `mods/`。手动使用数据包时，可打包 [26.3 数据包目录](./versions/26.3)。一个世界只启用其中一份。
 
-- [Minecraft 26.3 数据包源文件](./versions/26.3)
-- [原 README（旧版指南、贡献者与署名）](https://github.com/OpenRongMC/Epic-Terrain/blob/e27232b44bb7463bfd6729de85fdde8a7ba36a14/README.md)
-- [上游项目与文档](https://github.com/wonderfulaichen/Epic-Terrain)
-- [报告 RongMC 移植问题](https://github.com/OpenRongMC/Epic-Terrain/issues) · 请附游戏版本、两端 JAR 文件名、复现步骤和相关日志。
+## 取舍
 
-## 许可与署名
+去掉 dimension 群系表后，原版靠该表铺开的 `etn:zenith_lake` 等自定义群系点位**不会再被本包强制生成**。群系定义文件仍保留在包内，供其他方式引用。
 
-请参阅本仓库的 [LICENSE](./LICENSE) 及原项目的许可、署名和第三方资源说明。
+世界生成包需在**创建新世界**时生效；对已生成区块无效。
+
+## 推荐依赖
+
+- [WorldgenFeatureFix](https://modrinth.com/mod/worldgenfeaturefix)（1.21+ `minecraft:lake` 相关问题）
+
+## 许可
+
+上游 GitHub 树为 MIT（见 `LICENSE`）。官方 Modrinth 上部分发行标注 ARR；本移植基于 GitHub MIT 源。

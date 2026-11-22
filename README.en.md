@@ -2,34 +2,27 @@
 
 [简体中文](./README.md) · English
 
-A world-generation port that retains stepped rivers, waterfalls and river terrain. Compatibility adjustments make it easier to combine with biome mods, but each world-generation stack still needs testing.
 
-## Download and installation
+Epic Terrain shapes the Overworld with stepped riverbeds, waterfalls and sharper elevation changes. This version comes from [wonderfulaichen’s Epic Terrain](https://github.com/wonderfulaichen/Epic-Terrain) and retains the waterfall terrain rules.
 
-- Version · [v26.3-port.1](https://github.com/OpenRongMC/Epic-Terrain/releases/tag/v26.3-port.1) (Release)
-- Release asset · `rongmc-epic-terrain-26.3-port.1.jar`
-- Runtime · Minecraft Java 26.3, Fabric, Java 25
-- Fabric Loader · `>=0.20.1`
-- Fabric mod ID · `rongmc_epic_terrain`
-- Dependencies declared by the JAR · [Fabric API](https://modrinth.com/mod/fabric-api) (`fabric-resource-loader-v1`)
+## Terrain and biome compatibility
 
-Place the release JAR in the instance’s `mods/` directory. The release supplies a Fabric JAR. Versioned data-pack directories are also in the source tree. Enable one copy of the terrain rules per world. Generation runs on the server in multiplayer. Follow the pack’s client requirements.
+- The mod retains stepped rivers, waterfalls and river terrain.
+- The vanilla Overworld dimension definition remains available to biome mods such as TerraBlender integrations.
+- Temperature and vegetation use vanilla-style shifted noise.
+- Biomes such as `etn:zenith_lake` remain defined. Their previous forced placement depended on the old dimension biome table.
+- Changes apply to newly generated chunks.
 
-## How to try it
+## What changed in the RongMC 26.3 port
 
-Create two test worlds with the same seed and compare riverbanks and elevation changes with and without the pack. Existing chunks retain their terrain, so newly generated areas may have seams.
+The 26.3 data pack uses the updated pack and world-generation schemas. It retains stepped rivers and waterfalls and leaves the vanilla Overworld dimension definition available to other world-generation mods.
 
-## Development
+## Installation
 
-See [`port-26.3.py`](./port-26.3.py) for the build entry point. Check its workspace paths and dependencies before running it.
+Download **v26.3-port.1** from [GitHub Releases](https://github.com/OpenRongMC/Epic-Terrain/releases/tag/v26.3-port.1) for Minecraft Java **26.3** on **Fabric** with **Java 25**. Dependencies include [Fabric API](https://modrinth.com/mod/fabric-api). The release supplies a Fabric JAR. Versioned data-pack directories are also in the source tree. Enable one copy of the terrain rules per world. Generation runs on the server in multiplayer; follow the pack’s client requirements.
 
-## Documentation and support
+Place the Fabric release JAR in `mods/`. For a standalone data pack, package the contents of [the 26.3 data-pack directory](./versions/26.3). Enable one of the two in each world.
 
-- [Minecraft 26.3 data-pack source](./versions/26.3)
-- [Previous README (historical guide, contributors and credits)](https://github.com/OpenRongMC/Epic-Terrain/blob/e27232b44bb7463bfd6729de85fdde8a7ba36a14/README.md)
-- [Upstream project and documentation](https://github.com/wonderfulaichen/Epic-Terrain)
-- [Report a RongMC port issue](https://github.com/OpenRongMC/Epic-Terrain/issues) · Include the game version, client and server JAR names, reproduction steps and relevant logs.
+## License
 
-## License and credits
-
-See this repository’s [LICENSE](./LICENSE) and the original project’s license, credits and third-party asset notices.
+This port is based on the MIT-licensed GitHub source. See [LICENSE](./LICENSE) and the upstream project.
